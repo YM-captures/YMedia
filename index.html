@@ -1,510 +1,340 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="fr" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YM Media — Made of moments.</title>
-<meta name="description" content="YM est un média éditorial qui documente les gens, les métiers et les cultures que les réseaux sociaux ne racontent plus.">
-<link rel="icon" type="image/png" href="assets/logos/subark-white.png">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="YM Media documente les voyages, les cultures, les sports automobiles, les métiers, les personnes et les moments vécus.">
+  <title>YM Media — Made of moments.</title>
+  <link rel="icon" type="image/png" href="assets/logos/favicon.png">
+  <link rel="preload" href="assets/images/hero-merch.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/logos/logo-secondary-light.png" as="image" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
 
-<a href="#main" class="skip-link">Aller au contenu</a>
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__mark-wrap">
+      <img class="preloader__mark" src="assets/logos/submark-light.png" alt="" width="569" height="350">
+      <div class="preloader__counter"><span>00</span><sup>%</sup></div>
+    </div>
+    <div class="preloader__track"><span></span></div>
+  </div>
 
-<!-- ============ PRELOADER ============ -->
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="preloader__mark"><img src="assets/logos/subark-white.png" alt=""></div>
-  <div class="preloader__bar"><span id="preloaderBar"></span></div>
-  <div class="preloader__count" id="preloaderCount">0%</div>
-</div>
+  <div class="page-progress" aria-hidden="true"><span></span></div>
 
-<!-- ============ CUSTOM CURSOR ============ -->
-<div class="cursor" id="cursor" aria-hidden="true"></div>
-<div class="cursor-label" id="cursorLabel" aria-hidden="true"></div>
-
-<!-- ============ HEADER / NAV ============ -->
-<header class="site-header" id="siteHeader">
-  <div class="container nav-inner">
-    <a href="#accueil" class="nav-logo" aria-label="YM Media — Accueil">
-      <img src="assets/logos/subark-white.png" alt="YM Media" class="logo-white">
+  <header class="site-header" data-header>
+    <a class="brand-mark magnetic" href="#top" aria-label="YM Media — retour en haut">
+      <img src="assets/logos/submark-light.png" alt="" width="569" height="350">
     </a>
-
-    <nav class="nav-links" aria-label="Navigation principale">
-      <a href="#accueil">Accueil</a>
+    <nav class="desktop-nav" aria-label="Navigation principale">
       <a href="#reportages">Reportages</a>
       <a href="#films">Films</a>
       <a href="#archives">Archives</a>
       <a href="#merch">Merch</a>
-      <a href="#apropos">À propos</a>
+      <a href="#about">À propos</a>
     </nav>
-
-    <a href="#newsletter" class="nav-cta">S'abonner</a>
-
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
+    <a class="header-cta magnetic" href="#newsletter">Newsletter <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle magnetic" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="menu-toggle__label">Menu</span>
+      <span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i></span>
     </button>
-  </div>
-</header>
+  </header>
 
-<!-- ============ MOBILE MENU ============ -->
-<div class="mobile-menu" id="mobileMenu">
-  <nav aria-label="Navigation mobile">
-    <ul>
-      <li><a href="#accueil" class="mobile-link">Accueil</a></li>
-      <li><a href="#reportages" class="mobile-link">Reportages</a></li>
-      <li><a href="#films" class="mobile-link">Films</a></li>
-      <li><a href="#archives" class="mobile-link">Archives</a></li>
-      <li><a href="#merch" class="mobile-link">Merch</a></li>
-      <li><a href="#apropos" class="mobile-link">À propos</a></li>
-      <li><a href="#newsletter" class="mobile-link">Journal</a></li>
-    </ul>
-  </nav>
-  <div class="mobile-menu__foot">
-    <span>© 2026 YM Media</span>
-    <div class="mobile-menu__social">
-      <a href="#" class="link-underline">Instagram</a>
-      <a href="#" class="link-underline">YouTube</a>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__noise" aria-hidden="true"></div>
+    <nav aria-label="Navigation mobile">
+      <a href="#top"><span>01</span>Accueil</a>
+      <a href="#reportages"><span>02</span>Reportages</a>
+      <a href="#films"><span>03</span>Films</a>
+      <a href="#archives"><span>04</span>Archives</a>
+      <a href="#merch"><span>05</span>Merch</a>
+      <a href="#about"><span>06</span>À propos</a>
+      <a href="#newsletter"><span>07</span>Newsletter</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <img src="assets/logos/logo-secondary-light.png" alt="YM Media — Made of moments." width="1065" height="351">
+      <p>Voyage · Culture · Automobile · Portraits · Photographie · Films</p>
     </div>
   </div>
-</div>
 
-<main id="main">
+  <div class="cursor" aria-hidden="true"><span></span></div>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="accueil" data-lenis-scroll-target>
-    <div class="hero__media" id="heroMedia">
-      <img src="https://images.unsplash.com/photo-1686643134677-1c8d57262f34?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="Paddock des 24 Heures du Mans, mécaniciens au travail sous les projecteurs." loading="eager">
-      <div class="hero__scrim"></div>
-    </div>
-
-    <div class="container">
-      <div class="hero__top">
-        <span class="hero__badge"><img src="assets/icons/racetrack.png" alt="">Sport automobile — reportage terrain</span>
-        <span class="hero__badge" id="topArchiveHint">JP · 212 reportages</span>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__media" data-parallax="0.12">
+        <img src="assets/images/hero-merch.webp" alt="Collection YM Media photographiée sur des marches en pierre, sous une lumière naturelle." width="1402" height="1122" fetchpriority="high">
       </div>
-    </div>
-
-    <div class="container hero__body">
-      <span class="hero__kicker" data-reveal data-reveal-type="fade">YM — média des instants vécus</span>
-      <h1 class="h-display h-xl hero__title" id="heroTitle">
-        <span class="line"><span>Tu repartiras toujours</span></span>
-        <span class="line"><span>avec une nouvelle façon</span></span>
-        <span class="line"><span>de regarder le monde.</span></span>
-      </h1>
-      <div class="hero__foot">
-        <p class="hero__baseline" data-reveal data-reveal-type="fade">
-          <span class="of-word">Made</span> of <span class="moments-word">moments.</span>
-        </p>
-        <div class="scroll-cue">
-          <span>Défiler</span>
-          <span class="scroll-cue__line"></span>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__topline">
+        <span>Média éditorial indépendant</span>
+        <span>Toulouse · France</span>
+      </div>
+      <div class="hero__content">
+        <img class="hero__logo" src="assets/logos/logo-secondary-light.png" alt="YM Media — Made of moments." width="1065" height="351">
+        <h1 id="hero-title" class="hero__title" aria-label="Une nouvelle façon de regarder le monde">
+          <span class="hero__line"><span>Une nouvelle façon</span></span>
+          <span class="hero__line hero__line--indent"><span>de regarder le monde.</span></span>
+        </h1>
+        <div class="hero__meta">
+          <p>Nous documentons les personnes, les cultures, les gestes et les territoires qui donnent du relief au présent.</p>
+          <a class="round-link magnetic" href="#manifesto" aria-label="Découvrir le manifeste">
+            <span>Entrer</span><i aria-hidden="true">↓</i>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ MANIFESTO ============ -->
-  <section class="manifesto section-pad">
-    <div class="container manifesto__grid">
-      <div class="manifesto__label">
-        <span class="eyebrow">01 — Ce que nous sommes</span>
+      <div class="hero__ticker" aria-hidden="true">
+        <div>VOYAGE — CULTURE — AUTOMOBILE — MÉTIERS — PORTRAITS — FILMS — PHOTOGRAPHIE —&nbsp;</div>
+        <div>VOYAGE — CULTURE — AUTOMOBILE — MÉTIERS — PORTRAITS — FILMS — PHOTOGRAPHIE —&nbsp;</div>
       </div>
-      <div>
-        <p class="manifesto__text" id="manifestoText">
-          YM n'est pas une agence. Ni un studio. Ni un fil social de plus. C'est un
-          <span class="accent-red">carnet de route</span> tenu par des gens qui préfèrent rester
-          une heure de trop dans un garage, un atelier ou un paddock plutôt que de repartir avec
-          la photo qu'on attendait. On y documente les <span class="accent-blue">artisans</span>,
-          les pilotes, les villes et les gestes que personne ne pense à filmer — jusqu'à ce qu'ils
-          disparaissent.
-        </p>
+    </section>
 
-        <div class="manifesto__stats">
-          <div class="stat">
-            <div class="stat__num" data-count-to="212">0</div>
-            <div class="stat__label">Reportages publiés</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num" data-count-to="18">0</div>
-            <div class="stat__label">Pays traversés</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num" data-count-to="4">0</div>
-            <div class="stat__label">Années de route</div>
-          </div>
+    <section class="manifesto section-pad" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="manifesto__aside">
+        <p class="eyebrow">01 — Manifeste</p>
+        <img src="assets/icons/microphone.png" alt="Icône microphone YM" width="300" height="300" loading="lazy">
+        <p class="manifesto__note">Ce qui compte n’est pas seulement ce qui arrive. C’est la manière dont un moment transforme notre regard.</p>
+      </div>
+      <div class="manifesto__body" id="about">
+        <h2 id="manifesto-title" class="manifesto__statement text-reveal">
+          YM n’est <em>ni une agence</em>, ni un studio, ni un fil social de plus.
+          C’est un média qui documente <strong>les personnes</strong>, les métiers, les villes,
+          les cultures et les gestes que les réseaux ne racontent plus.
+        </h2>
+        <div class="manifesto__facts">
+          <div><span>Regarder</span><p>Prendre le temps de voir ce qui se joue hors du cadre.</p></div>
+          <div><span>Comprendre</span><p>Relier une image à un lieu, un geste, une histoire et une voix.</p></div>
+          <div><span>Transmettre</span><p>Créer des récits précis, sensibles et accessibles, sans réduire le réel.</p></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ FEATURED STORY ============ -->
-  <section class="feature-story">
-    <div class="feature-story__media">
-      <img src="https://images.unsplash.com/photo-1686643134882-362094bc3702?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="Stand technique dans le paddock des 24 Heures du Mans." loading="lazy">
-      <div class="feature-story__scrim"></div>
-    </div>
-    <div class="container feature-story__content">
-      <div data-reveal data-reveal-type="up">
-        <span class="feature-story__tag"><img src="assets/icons/helmet.png" alt="">Sport automobile</span>
-        <h2 class="h-display h-lg">Dans les coulisses des 24&nbsp;Heures</h2>
-      </div>
-      <div data-reveal data-reveal-type="up" data-reveal-delay="0.15">
-        <p class="lede">Trois jours dans le paddock du Mans, entre les mécaniciens qui ne dorment
-          pas et les stands qui poussent comme des villes provisoires. Un reportage sur ce que
-          la course ne montre jamais à la caméra.</p>
-        <a href="#" class="editorial-link" style="margin-top:24px;">Lire le reportage <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </section>
+    <section class="stories" id="reportages" aria-labelledby="stories-title">
+      <header class="section-heading section-pad">
+        <p class="eyebrow">02 — Reportages à la une</p>
+        <h2 id="stories-title" class="display-title">Des histoires<br><span>à hauteur humaine.</span></h2>
+        <p class="section-heading__intro">Des récits pensés comme des traversées : une image ouvre la porte, le terrain donne le rythme, les voix déplacent le point de vue.</p>
+      </header>
 
-  <!-- ============ UNIVERSES GRID ============ -->
-  <section class="universes section-pad" id="explorer">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">02 — À explorer</span>
-          <h2 class="h-display h-lg" style="margin-top:18px;">Quatre façons de regarder ailleurs</h2>
+      <article class="story story--speed" tabindex="0" data-cursor="Lire">
+        <div class="story__visual">
+          <div class="story__number">01</div>
+          <img class="story__icon story__icon--helmet" src="assets/icons/helmet-light.png" alt="" width="300" height="300" loading="lazy">
+          <img class="story__icon story__icon--track" src="assets/icons/racetrack-light.png" alt="" width="300" height="300" loading="lazy">
+          <div class="story__speed-lines" aria-hidden="true"></div>
         </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="universes__grid">
-        <a href="#" class="universe-card" style="--card-accent:var(--c-blue)" data-reveal data-reveal-type="up">
-          <span class="universe-card__num">01</span>
-          <span class="universe-card__icon"><img src="assets/icons/white/mountain-road.png" alt=""></span>
-          <span>
-            <span class="universe-card__title">Voyage</span>
-            <span class="universe-card__desc">Des routes qu'on ne trouve pas dans les guides.</span>
-          </span>
-        </a>
-        <a href="#" class="universe-card" style="--card-accent:var(--c-green)" data-reveal data-reveal-type="up" data-reveal-delay="0.08">
-          <span class="universe-card__num">02</span>
-          <span class="universe-card__icon"><img src="assets/icons/racetrack.png" alt=""></span>
-          <span>
-            <span class="universe-card__title">Sport auto</span>
-            <span class="universe-card__desc">Paddocks, stands et circuits vus de l'intérieur.</span>
-          </span>
-        </a>
-        <a href="#" class="universe-card" style="--card-accent:var(--c-red)" data-reveal data-reveal-type="up" data-reveal-delay="0.16">
-          <span class="universe-card__num">03</span>
-          <span class="universe-card__icon"><img src="assets/icons/white/torii-gate.png" alt=""></span>
-          <span>
-            <span class="universe-card__title">Culture japonaise</span>
-            <span class="universe-card__desc">Artisans, temples et savoir-faire transmis.</span>
-          </span>
-        </a>
-        <a href="#" class="universe-card" style="--card-accent:var(--c-blue)" data-reveal data-reveal-type="up" data-reveal-delay="0.24">
-          <span class="universe-card__num">04</span>
-          <span class="universe-card__icon"><img src="assets/icons/white/notepad.png" alt=""></span>
-          <span>
-            <span class="universe-card__title">Portraits &amp; métiers</span>
-            <span class="universe-card__desc">Ceux qui font les choses avec leurs mains.</span>
-          </span>
-        </a>
-        <a href="#" class="universe-card" style="--card-accent:var(--c-green)" data-reveal data-reveal-type="up" data-reveal-delay="0.08">
-          <span class="universe-card__num">05</span>
-          <span class="universe-card__icon"><img src="assets/icons/camera.png" alt=""></span>
-          <span>
-            <span class="universe-card__title">Photographie</span>
-            <span class="universe-card__desc">Des instants figés, sans filtre ni mise en scène.</span>
-          </span>
-        </a>
-        <a href="#films" class="universe-card" style="--card-accent:var(--c-red)" data-reveal data-reveal-type="up" data-reveal-delay="0.16">
-          <span class="universe-card__num">06</span>
-          <span class="universe-card__icon"><img src="assets/icons/video-camera.png" alt=""></span>
-          <span>
-            <span class="universe-card__title">Vidéo</span>
-            <span class="universe-card__desc">Des séries documentaires tournées au plus près.</span>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ REPORTAGES ============ -->
-  <section class="reportages section-pad" id="reportages">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">03 — Reportages à la une</span>
-          <h2 class="h-display h-lg" style="margin-top:18px;">Ce que nos équipes ramènent du terrain</h2>
-        </div>
-        <p class="lede">Trois carnets, trois rythmes. Le sport automobile, le geste artisanal et
-          la lenteur volontaire d'un pèlerinage vers le Fuji.</p>
-      </div>
-
-      <article class="reportage">
-        <div class="reportage__media" data-reveal data-reveal-type="scale">
-          <img src="https://images.unsplash.com/photo-1607556671927-78a6605e290b?fm=jpg&q=80&w=1600&auto=format&fit=crop" alt="Céramiste japonais façonnant un bol à la main dans son atelier de Mashiko." loading="lazy">
-        </div>
-        <div class="reportage__text" data-reveal data-reveal-type="up">
-          <span class="reportage__tag"><img src="assets/icons/white/notepad.png" alt="">Portraits &amp; métiers</span>
-          <h3 class="h-display h-md reportage__title">Les mains qui n'oublient jamais</h3>
-          <p class="lede reportage__excerpt">À Mashiko, un céramiste façonne encore chaque bol comme
-            le lui a appris son grand-père. Ni tour électrique, ni mesure : seulement la mémoire
-            du geste, répété depuis quarante ans jusqu'à devenir invisible.</p>
-          <a href="#" class="editorial-link">Lire le reportage <span class="arrow">→</span></a>
+        <div class="story__copy">
+          <p class="story__category">Sport automobile · Reportage</p>
+          <h3>La vitesse<br>comme langage.</h3>
+          <p>Dans les paddocks, chaque bruit, chaque geste et chaque silence raconte la précision d’un monde construit au millième de seconde.</p>
+          <a class="text-link magnetic" href="#newsletter">Découvrir le récit <span aria-hidden="true">↗</span></a>
         </div>
       </article>
 
-      <article class="reportage reportage--reverse">
-        <div class="reportage__media" data-reveal data-reveal-type="scale">
-          <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="Mont Fuji au lever du jour, vu depuis un sentier de randonnée." loading="lazy">
+      <article class="story story--japan" tabindex="0" data-cursor="Voir">
+        <div class="story__copy">
+          <p class="story__category">Voyage · Culture</p>
+          <h3>Tokyo, entre<br>gestes et silences.</h3>
+          <p>Observer une ville par ses rythmes quotidiens : la lumière, les seuils, les habitudes et les détails qui résistent à la carte postale.</p>
+          <a class="text-link magnetic" href="#newsletter">Entrer dans l’histoire <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="reportage__text" data-reveal data-reveal-type="up">
-          <span class="reportage__tag"><img src="assets/icons/white/mountain-road.png" alt="">Voyage</span>
-          <h3 class="h-display h-md reportage__title">Sur la route de Fuji</h3>
-          <p class="lede reportage__excerpt">Neuf cents kilomètres à pied, en train local et en
-            stop, pour rejoindre le sommet par les chemins que les cars de tourisme ne prennent
-            pas. Un carnet sur la lenteur, volontaire, dans un pays qui a inventé le train le
-            plus rapide du monde.</p>
-          <a href="#" class="editorial-link">Lire le carnet <span class="arrow">→</span></a>
+        <div class="story__visual">
+          <img class="story__icon story__icon--fuji" src="assets/icons/fuji.png" alt="Icône du mont Fuji de l’identité YM" width="300" height="300" loading="lazy">
+          <img class="story__icon story__icon--torii" src="assets/icons/torii.png" alt="Icône torii de l’identité YM" width="300" height="300" loading="lazy">
+          <div class="story__sun" aria-hidden="true"></div>
+          <div class="story__number">02</div>
         </div>
       </article>
-    </div>
-  </section>
 
-  <!-- ============ FILMS ============ -->
-  <section class="films section-pad" id="films">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">04 — À regarder</span>
-          <h2 class="h-display h-lg" style="margin-top:18px;">24 heures, une seule nuit.</h2>
-        </div>
-        <p class="lede">Notre série documentaire suit trois équipages du WEC, de la journée test
-          au drapeau à damier. Pas de voix off — juste le bruit des stands et l'attente entre
-          deux relais.</p>
+      <div class="story-pair section-pad">
+        <article class="mini-story mini-story--travel" tabindex="0" data-cursor="Lire">
+          <div class="mini-story__visual">
+            <img src="assets/icons/plane-light.png" alt="Icône avion YM" width="300" height="300" loading="lazy">
+            <span>03</span>
+          </div>
+          <div class="mini-story__copy">
+            <p class="story__category">Voyage · Carnet</p>
+            <h3>Partir pour mieux regarder.</h3>
+            <p>Le déplacement comme méthode d’attention, loin des listes de lieux à cocher.</p>
+          </div>
+        </article>
+        <article class="mini-story mini-story--people" tabindex="0" data-cursor="Lire">
+          <div class="mini-story__copy">
+            <p class="story__category">Portraits · Métiers</p>
+            <h3>Celles et ceux qui fabriquent.</h3>
+            <p>Des gestes transmis, répétés, affinés — et les personnes qui leur donnent une voix.</p>
+          </div>
+          <div class="mini-story__visual">
+            <img src="assets/icons/notebook-light.png" alt="Icône carnet YM" width="300" height="300" loading="lazy">
+            <span>04</span>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="film-card" data-reveal data-reveal-type="scale" data-cursor-label="Lire">
-        <div class="film-card__media">
-          <img src="https://images.unsplash.com/photo-1749952649196-3b6653ed7ab0?fm=jpg&q=80&w=2400&auto=format&fit=crop" alt="Voiture de course filant sur le circuit de nuit, traînées lumineuses des phares." loading="lazy">
+    <section class="film section-pad" id="films" aria-labelledby="film-title">
+      <div class="film__stage" data-cursor="Lecture">
+        <img src="assets/images/film-jersey.webp" alt="Maillot concept YM Media suspendu dans la lumière." width="1122" height="1402" loading="lazy">
+        <div class="film__overlay" aria-hidden="true"></div>
+        <div class="film__topline"><span>Film manifeste</span><span>Aperçu visuel</span></div>
+        <div class="film__content">
+          <p class="eyebrow">03 — Films</p>
+          <h2 id="film-title">Made of<br><span>moments.</span></h2>
+          <p>Une interface de lecture conçue pour accueillir les futurs films YM. Aucun flux externe n’est simulé tant qu’un fichier vidéo n’est pas fourni.</p>
         </div>
-        <div class="film-card__scrim"></div>
-        <div class="film-card__content">
-          <div class="film-card__top">
-            <span class="film-card__cat" style="margin:0;">Documentaire</span>
-            <span class="film-card__duration">14 min</span>
-          </div>
-          <button class="film-card__play" aria-label="Lire le film — 24 heures, une seule nuit">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4L20 12L6 20V4Z" fill="#F5F3EF"/></svg>
-          </button>
-          <div class="film-card__bottom">
-            <span class="film-card__cat">Sport automobile</span>
-            <h3 class="h-display h-md film-card__title">24 heures, une seule nuit</h3>
-            <p class="film-card__desc">Trois équipages du WEC, une nuit entière au Mans — la
-              tension des stratégies et le silence long entre deux relais.</p>
-          </div>
-        </div>
+        <button class="play-button magnetic" type="button" aria-label="Aperçu du lecteur — vidéo non fournie" aria-describedby="film-status">
+          <span aria-hidden="true">▶</span>
+        </button>
+        <p class="film__status" id="film-status" role="status">Vidéo bientôt disponible</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ ARCHIVES ============ -->
-  <section class="archives section-pad" id="archives">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">05 — Archives</span>
-          <h2 class="h-display h-lg" style="margin-top:18px;">Chaque reportage, un tampon dans le carnet.</h2>
-        </div>
-        <p class="lede">Inspirées des tampons de gare japonais, nos archives se collectionnent
-          comme des souvenirs de voyage.</p>
+    <section class="universes section-pad" aria-labelledby="universes-title">
+      <header class="universes__header">
+        <p class="eyebrow">04 — Univers éditoriaux</p>
+        <h2 id="universes-title" class="display-title">Six portes.<br><span>Un même regard.</span></h2>
+      </header>
+      <div class="universe-grid">
+        <article class="universe-card universe-card--blue" tabindex="0" data-cursor="Explorer">
+          <span class="universe-card__index">01</span>
+          <img src="assets/icons/globe-light.png" alt="Icône globe YM" width="300" height="300" loading="lazy">
+          <h3>Voyage</h3><p>Territoires, itinéraires et points de vue.</p>
+        </article>
+        <article class="universe-card universe-card--green" tabindex="0" data-cursor="Explorer">
+          <span class="universe-card__index">02</span>
+          <img src="assets/icons/steering-wheel-light.png" alt="Icône volant YM" width="300" height="300" loading="lazy">
+          <h3>Sport automobile</h3><p>Vitesse, précision, technique et culture.</p>
+        </article>
+        <article class="universe-card universe-card--cream" tabindex="0" data-cursor="Explorer">
+          <span class="universe-card__index">03</span>
+          <img src="assets/icons/tokyo-tower.png" alt="Icône ville japonaise YM" width="300" height="300" loading="lazy">
+          <h3>Culture</h3><p>Usages, signes, scènes et mémoires collectives.</p>
+        </article>
+        <article class="universe-card universe-card--red" tabindex="0" data-cursor="Explorer">
+          <span class="universe-card__index">04</span>
+          <img src="assets/icons/microphone-light.png" alt="Icône microphone YM" width="300" height="300" loading="lazy">
+          <h3>Portraits & métiers</h3><p>Voix, savoir-faire et trajectoires singulières.</p>
+        </article>
+        <article class="universe-card universe-card--cream" tabindex="0" data-cursor="Explorer">
+          <span class="universe-card__index">05</span>
+          <img src="assets/icons/camera.png" alt="Icône appareil photo YM" width="300" height="300" loading="lazy">
+          <h3>Photographie</h3><p>Cadres, lumières et fragments du réel.</p>
+        </article>
+        <article class="universe-card universe-card--blue" tabindex="0" data-cursor="Explorer">
+          <span class="universe-card__index">06</span>
+          <img src="assets/icons/video-camera-light.png" alt="Icône caméra vidéo YM" width="300" height="300" loading="lazy">
+          <h3>Vidéo</h3><p>Mouvements, récits et atmosphères documentaires.</p>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="container">
-      <div class="archive-track" id="archiveTrack" tabindex="0" aria-label="Défilement horizontal des archives" data-cursor-label="Drag">
-        <div class="stamp-card" style="--stamp-accent:var(--c-green)">
-          <div class="stamp-card__top">
-            <span class="stamp-card__icon"><img src="assets/icons/bamboo-stamp.png" alt="Tampon bambou"></span>
-            <span class="stamp-card__code">JP · 001</span>
-          </div>
-          <h3 class="stamp-card__title">Arashiyama, la forêt qui murmure</h3>
-          <p class="stamp-card__meta">Carnet — Mars 2025</p>
-        </div>
-        <div class="stamp-card" style="--stamp-accent:var(--c-blue)">
-          <div class="stamp-card__top">
-            <span class="stamp-card__icon"><img src="assets/icons/wave-stamp.png" alt="Tampon vague"></span>
-            <span class="stamp-card__code">JP · 014</span>
-          </div>
-          <h3 class="stamp-card__title">Sur les quais de Kamakura</h3>
-          <p class="stamp-card__meta">Carnet — Mai 2025</p>
-        </div>
-        <div class="stamp-card" style="--stamp-accent:var(--c-cream)">
-          <div class="stamp-card__top">
-            <span class="stamp-card__icon"><img src="assets/icons/bridge-stamp.png" alt="Tampon pont"></span>
-            <span class="stamp-card__code">FR · 032</span>
-          </div>
-          <h3 class="stamp-card__title">Le pont que le TGV ne voit plus</h3>
-          <p class="stamp-card__meta">Reportage — Juin 2025</p>
-        </div>
-        <div class="stamp-card" style="--stamp-accent:var(--c-blue)">
-          <div class="stamp-card__top">
-            <span class="stamp-card__icon"><img src="assets/icons/gas-pump-stamp.png" alt="Tampon station essence"></span>
-            <span class="stamp-card__code">US · 007</span>
-          </div>
-          <h3 class="stamp-card__title">La dernière station avant le désert</h3>
-          <p class="stamp-card__meta">Carnet — Septembre 2025</p>
-        </div>
-        <div class="stamp-card" style="--stamp-accent:var(--c-red)">
-          <div class="stamp-card__top">
-            <span class="stamp-card__icon"><img src="assets/icons/sunset-stamp.png" alt="Tampon coucher de soleil"></span>
-            <span class="stamp-card__code">PT · 019</span>
-          </div>
-          <h3 class="stamp-card__title">Couchers de soleil, sans filtre</h3>
-          <p class="stamp-card__meta">Carnet — Octobre 2025</p>
-        </div>
-        <div class="stamp-card" style="--stamp-accent:var(--c-cream)">
-          <div class="stamp-card__top">
-            <span class="stamp-card__icon"><img src="assets/icons/coastal-road-stamp.png" alt="Tampon route côtière"></span>
-            <span class="stamp-card__code">IT · 026</span>
-          </div>
-          <h3 class="stamp-card__title">La route qui longe la falaise</h3>
-          <p class="stamp-card__meta">Reportage — Décembre 2025</p>
+    <section class="archives" id="archives" aria-labelledby="archives-title">
+      <header class="archives__header section-pad">
+        <p class="eyebrow">05 — Archives</p>
+        <h2 id="archives-title" class="display-title">Une collection<br><span>de traces.</span></h2>
+        <p>Des lieux, des routes et des instants réunis comme des cachets de passage. Faites défiler la collection.</p>
+      </header>
+      <div class="archives__viewport" data-cursor="Drag">
+        <div class="archives__track">
+          <article class="stamp-card stamp-card--green"><img src="assets/icons/bamboo-stamp-light.png" alt="Timbre bambou YM" width="300" height="250" loading="lazy"><p>Japon<br><span>Gestes & matières</span></p></article>
+          <article class="stamp-card stamp-card--blue"><img src="assets/icons/wave-stamp-light.png" alt="Timbre vague YM" width="300" height="250" loading="lazy"><p>Océan<br><span>Lignes mouvantes</span></p></article>
+          <article class="stamp-card stamp-card--cream"><img src="assets/icons/bridge-stamp.png" alt="Timbre pont YM" width="300" height="250" loading="lazy"><p>Territoires<br><span>Passages</span></p></article>
+          <article class="stamp-card stamp-card--blue"><img src="assets/icons/gas-pump-stamp-light.png" alt="Timbre pompe à essence YM" width="300" height="250" loading="lazy"><p>Route<br><span>Machines & paysages</span></p></article>
+          <article class="stamp-card stamp-card--red"><img src="assets/icons/sunset-stamp-light.png" alt="Timbre coucher de soleil YM" width="300" height="250" loading="lazy"><p>Horizons<br><span>Dernières lumières</span></p></article>
+          <article class="stamp-card stamp-card--cream"><img src="assets/icons/coast-road-stamp.png" alt="Timbre route côtière YM" width="300" height="250" loading="lazy"><p>Départs<br><span>Au-delà du cadre</span></p></article>
         </div>
       </div>
+    </section>
 
-      <div class="archives__more">
-        <a href="#" class="btn">Voir les 212 reportages <span class="btn-arrow">→</span></a>
+    <section class="merch section-pad" id="merch" aria-labelledby="merch-title">
+      <header class="merch__header">
+        <p class="eyebrow">06 — Éditions YM</p>
+        <h2 id="merch-title" class="display-title">Le merch YM<br><span>arrive bientôt.</span></h2>
+        <p>Des objets pensés pour prolonger les moments, même lorsque le reportage est terminé.</p>
+        <span class="coming-badge">Bientôt disponible</span>
+      </header>
+      <div class="merch-gallery">
+        <figure class="merch-shot merch-shot--wide" data-cursor="Voir">
+          <img src="assets/merch/merch-collection-01.webp" alt="Sac, casquette et t-shirt noirs de la collection YM Media." width="1402" height="1122" loading="lazy">
+          <figcaption>Collection 01 — essentiels</figcaption>
+        </figure>
+        <figure class="merch-shot merch-shot--portrait" data-cursor="Voir">
+          <img src="assets/merch/merch-collection-02.webp" alt="Sweat noir, casquette et t-shirt blanc YM Media." width="1024" height="1536" loading="lazy">
+          <figcaption>Collection 02 — noir / blanc</figcaption>
+        </figure>
+        <figure class="merch-shot merch-shot--detail" data-cursor="Voir">
+          <img src="assets/merch/merch-collection-03.webp" alt="Veste, carnet et gourdes YM Media." width="1402" height="1122" loading="lazy">
+          <figcaption>Collection 03 — terrain</figcaption>
+        </figure>
+        <figure class="merch-shot merch-shot--jersey" data-cursor="Voir">
+          <img src="assets/merch/merch-collection-04.webp" alt="Maillot concept noir YM Media avec accents rouges et bleus." width="1122" height="1402" loading="lazy">
+          <figcaption>Collection 04 — jersey concept</figcaption>
+        </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ QUOTE ============ -->
-  <section class="quote-section">
-    <div class="container">
-      <img src="assets/icons/tripod-camera.png" alt="" class="quote-section__icon">
-      <blockquote data-reveal data-reveal-type="fade">
-        « On ne shoote pas les gens de YM. On les laisse continuer ce qu'ils faisaient, et on
-        essaie de ne pas être dans le chemin de la lumière. »
-      </blockquote>
-      <cite>— Une rédactrice de YM, carnet de terrain</cite>
-    </div>
-  </section>
-
-  <!-- ============ MERCH ============ -->
-  <section class="merch section-pad" id="merch">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="merch__badge">Bientôt disponible</span>
-          <h2 class="h-display h-lg">Le merch YM arrive bientôt.</h2>
-        </div>
-        <p class="lede">Des objets pensés pour prolonger les moments, même lorsque le reportage
-          est terminé.</p>
-      </div>
-
-      <div class="merch__gallery">
-        <div class="merch-item" data-reveal data-reveal-type="scale">
-          <img src="assets/merch/merch-02.jpg" alt="Veste, carnet et bouteilles YM Media posés sur des marches en pierre." loading="lazy">
-        </div>
-        <div class="merch-item" data-reveal data-reveal-type="scale" data-reveal-delay="0.08">
-          <img src="assets/merch/merch-01.jpg" alt="Sac de sport, casquette et t-shirt noir floqués YM Media." loading="lazy">
-        </div>
-        <div class="merch-item" data-reveal data-reveal-type="scale" data-reveal-delay="0.16">
-          <img src="assets/merch/merch-03.jpg" alt="Casquette, sweat à capuche et t-shirt blanc YM Media." loading="lazy">
-        </div>
-        <div class="merch-item" data-reveal data-reveal-type="scale" data-reveal-delay="0.24">
-          <img src="assets/merch/merch-04.jpg" alt="Maillot sport YM Media suspendu, dégradé rouge et bleu." loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ POP-UP STORE ============ -->
-  <section class="popup" id="popup">
-    <div class="popup__media">
-      <img src="assets/popup/popup-store.jpg" alt="Enseigne rétroéclairée YM Media à l'intérieur d'un futur pop-up store." loading="lazy">
-      <div class="popup__scrim"></div>
-    </div>
-    <div class="container popup__content">
-      <span class="eyebrow popup__city" style="border-radius:999px;padding:8px 16px;">Toulouse</span>
-      <h2 class="h-display h-lg" style="margin-top:22px;">Un pop-up store YM ouvrira prochainement à Toulouse.</h2>
-      <p class="lede" style="margin-top:22px; color: var(--c-cream-dim);">Un lieu pensé comme une
-        extension du carnet de route — pour toucher, essayer et repartir avec un fragment de nos
-        reportages.</p>
-    </div>
-  </section>
-
-  <!-- ============ NEWSLETTER ============ -->
-  <section class="newsletter section-pad" id="newsletter">
-    <div class="container newsletter__inner">
-      <div>
-        <img src="assets/icons/satellite.png" alt="" class="newsletter__icon">
-        <h2 class="h-display h-lg">Un reportage par semaine, directement dans ta boîte.</h2>
-      </div>
-      <div>
-        <p class="lede" style="margin-bottom: 26px;">Pas de résumé d'actu. Une seule histoire,
-          racontée en entier.</p>
-        <form class="newsletter-form" id="newsletterForm" novalidate>
-          <div class="newsletter-form__field">
-            <label for="newsletterEmail" class="sr-only">Adresse e-mail</label>
-            <input type="email" id="newsletterEmail" name="email" placeholder="ton@email.com" required autocomplete="email">
+    <section class="popup" aria-labelledby="popup-title">
+      <div class="popup__sticky">
+        <div class="popup__frame">
+          <img src="assets/popup/pop-up-store.webp" alt="Logo YM Media rétroéclairé derrière un comptoir de pop-up store." width="1536" height="1024" loading="lazy">
+          <div class="popup__shade" aria-hidden="true"></div>
+          <div class="popup__content">
+            <p class="eyebrow">07 — Prochainement</p>
+            <h2 id="popup-title">Un pop-up store YM<br>ouvrira prochainement<br><span>à Toulouse.</span></h2>
+            <p>Un lieu physique pour découvrir l’univers, les objets et les histoires de YM. Les informations pratiques seront annoncées lorsqu’elles seront confirmées.</p>
           </div>
-          <button type="submit">S'abonner</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter section-pad" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="newsletter__icon" aria-hidden="true">
+        <img src="assets/icons/plane-light.png" alt="" width="300" height="300" loading="lazy">
+      </div>
+      <div class="newsletter__content">
+        <p class="eyebrow">08 — Newsletter</p>
+        <h2 id="newsletter-title">Recevoir les prochains<br><span>moments.</span></h2>
+        <p>Reportages, films, coulisses et annonces YM — réunis dans un message, sans bruit inutile.</p>
+        <form class="newsletter-form" novalidate>
+          <label for="email">Adresse e-mail</label>
+          <div class="newsletter-form__row">
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required aria-describedby="newsletter-message">
+            <button class="magnetic" type="submit">S’inscrire <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="newsletter-form__message" id="newsletter-message" role="status" aria-live="polite">Interface de démonstration — aucune donnée n’est envoyée.</p>
         </form>
-        <p class="newsletter__note">Un e-mail par semaine. Désinscription en un clic.</p>
-        <p class="newsletter__success" id="newsletterSuccess" role="status">Merci — tu recevras
-          le prochain carnet directement dans ta boîte.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-pad">
+    <div class="site-footer__top">
+      <img src="assets/logos/logo-secondary-light.png" alt="YM Media — Made of moments." width="1065" height="351">
+      <a class="round-link magnetic" href="#top" aria-label="Retour en haut"><span>Haut</span><i aria-hidden="true">↑</i></a>
+    </div>
+    <div class="site-footer__grid">
+      <div><p class="footer-label">Explorer</p><a href="#reportages">Reportages</a><a href="#films">Films</a><a href="#archives">Archives</a><a href="#merch">Merch</a></div>
+      <div><p class="footer-label">YM Media</p><a href="#about">À propos</a><a href="#newsletter">Newsletter</a><span>Instagram</span><span>YouTube</span><span>TikTok</span></div>
+      <div><p class="footer-label">Univers</p><span>Voyage</span><span>Culture</span><span>Sport automobile</span><span>Portraits & métiers</span></div>
+      <div class="site-footer__icons" aria-hidden="true">
+        <img src="assets/icons/globe-light.png" alt="" width="300" height="300" loading="lazy">
+        <img src="assets/icons/camera.png" alt="" width="300" height="300" loading="lazy">
+        <img src="assets/icons/helmet-light.png" alt="" width="300" height="300" loading="lazy">
       </div>
     </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer" id="apropos">
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <img src="assets/logos/secondaire-white.png" alt="YM Media — Made of moments." class="footer-logo">
-        <p class="lede" style="max-width: 40ch;">Média éditorial consacré aux voyages, aux
-          cultures, aux sports automobiles, aux métiers et aux moments vécus.</p>
-        <div class="footer-icons">
-          <img src="assets/icons/white/map-pin.png" alt="">
-          <img src="assets/icons/white/notepad.png" alt="">
-          <img src="assets/icons/camera.png" alt="">
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Explorer</h4>
-        <ul>
-          <li><a href="#reportages" class="link-underline">Reportages</a></li>
-          <li><a href="#films" class="link-underline">Films</a></li>
-          <li><a href="#archives" class="link-underline">Archives</a></li>
-          <li><a href="#newsletter" class="link-underline">Journal</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="#apropos" class="link-underline">À propos</a></li>
-          <li><a href="#" class="link-underline">Contribuer</a></li>
-          <li><a href="#" class="link-underline">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Suivre</h4>
-        <ul>
-          <li><a href="#" class="link-underline">Instagram</a></li>
-          <li><a href="#" class="link-underline">YouTube</a></li>
-          <li><a href="#" class="link-underline">RSS</a></li>
-        </ul>
-      </div>
+    <div class="site-footer__bottom">
+      <p>© <span data-year></span> YM Media</p>
+      <p>Made of moments.</p>
+      <p>Site éditorial — Toulouse</p>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 YM Media. Made of moments.</span>
-      <span>Toulouse, France</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
-<script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,194 @@
+{
+  "plane": {
+    "width": 311,
+    "height": 322,
+    "source_cell": [
+      0,
+      0
+    ]
+  },
+  "fuji": {
+    "width": 308,
+    "height": 320,
+    "source_cell": [
+      0,
+      1
+    ]
+  },
+  "globe": {
+    "width": 311,
+    "height": 312,
+    "source_cell": [
+      0,
+      2
+    ]
+  },
+  "tokyo-tower": {
+    "width": 314,
+    "height": 316,
+    "source_cell": [
+      0,
+      3
+    ]
+  },
+  "camera": {
+    "width": 316,
+    "height": 329,
+    "source_cell": [
+      0,
+      4
+    ]
+  },
+  "video-camera": {
+    "width": 317,
+    "height": 331,
+    "source_cell": [
+      0,
+      5
+    ]
+  },
+  "helmet": {
+    "width": 308,
+    "height": 325,
+    "source_cell": [
+      1,
+      0
+    ]
+  },
+  "steering-wheel": {
+    "width": 306,
+    "height": 323,
+    "source_cell": [
+      1,
+      1
+    ]
+  },
+  "car": {
+    "width": 313,
+    "height": 318,
+    "source_cell": [
+      1,
+      2
+    ]
+  },
+  "torii": {
+    "width": 314,
+    "height": 318,
+    "source_cell": [
+      1,
+      3
+    ]
+  },
+  "racetrack": {
+    "width": 318,
+    "height": 333,
+    "source_cell": [
+      1,
+      4
+    ]
+  },
+  "road": {
+    "width": 316,
+    "height": 333,
+    "source_cell": [
+      1,
+      5
+    ]
+  },
+  "tripod-camera": {
+    "width": 324,
+    "height": 325,
+    "source_cell": [
+      2,
+      0
+    ]
+  },
+  "satellite": {
+    "width": 324,
+    "height": 326,
+    "source_cell": [
+      2,
+      1
+    ]
+  },
+  "laptop": {
+    "width": 306,
+    "height": 323,
+    "source_cell": [
+      2,
+      2
+    ]
+  },
+  "microphone": {
+    "width": 316,
+    "height": 319,
+    "source_cell": [
+      2,
+      3
+    ]
+  },
+  "location": {
+    "width": 304,
+    "height": 321,
+    "source_cell": [
+      2,
+      4
+    ]
+  },
+  "notebook": {
+    "width": 304,
+    "height": 320,
+    "source_cell": [
+      2,
+      5
+    ]
+  },
+  "bamboo-stamp": {
+    "width": 304,
+    "height": 289,
+    "source_cell": [
+      3,
+      0
+    ]
+  },
+  "wave-stamp": {
+    "width": 305,
+    "height": 289,
+    "source_cell": [
+      3,
+      1
+    ]
+  },
+  "bridge-stamp": {
+    "width": 318,
+    "height": 250,
+    "source_cell": [
+      3,
+      2
+    ]
+  },
+  "gas-pump-stamp": {
+    "width": 325,
+    "height": 283,
+    "source_cell": [
+      3,
+      3
+    ]
+  },
+  "sunset-stamp": {
+    "width": 360,
+    "height": 281,
+    "source_cell": [
+      3,
+      4
+    ]
+  },
+  "coast-road-stamp": {
+    "width": 349,
+    "height": 279,
+    "source_cell": [
+      3,
+      5
+    ]
+  }
+}
